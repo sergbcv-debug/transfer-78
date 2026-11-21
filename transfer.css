@@ -218,3 +218,5 @@
   .map-box { height: 360px; }
   .map-modal-head { font-size: 15px; }
 }
+/* цена без подписи «предварительно» — прижимаем вправо */
+.calc-total { justify-content: flex-end; }
