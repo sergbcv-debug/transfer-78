@@ -71,11 +71,16 @@
         }
         var lon2 = f.geometry.coordinates[0], lat2 = f.geometry.coordinates[1];
         var direct = haversine(lat, lon, lat2, lon2);
+        if (direct > 150) {
+          setHint('Похоже, это адрес в другом городе. Уточните улицу и дом — например, «Московское шоссе, 14».');
+          return;
+        }
         var road = Math.max(2, Math.round(direct * 1.35)); // поправка на дороги
         km.value = road;
         calc();
         var name = (f.properties && (f.properties.street || f.properties.name)) || q;
         setHint('Маршрут: ' + opt.textContent + ' → ' + name + ', около ' + road + ' км по дорогам.');
+        console.log('[calc] станция:', opt.textContent, '| адрес:', q, '| найдено:', name, lat2, lon2, '| км:', road);
         if (form && comment) {
           comment.value = 'Откуда: ' + opt.textContent + '; куда: ' + q + '; ~' + road + ' км';
         }
