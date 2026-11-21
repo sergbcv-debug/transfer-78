@@ -1,0 +1,18 @@
+/* Тема «Warm Paper» — тёплая бумага и терракота (прежний вид ВАН-СЕРВИС) */
+:root {
+  --ink: #0f1a24;
+  --muted: #4a5a68;
+  --line: #e3d8c6;
+  --accent: #c2410c;
+  --accent-dark: #9a3412;
+  --accent-soft: #fbe7d5;
+  --deep: #12212e;
+  --deep-2: #1b3040;
+  --paper: #f6f0e6;
+  --white: #ffffff;
+  --dark: #12212e;
+  --bg: #f6f0e6;
+  --tint: #ffffff;
+  --radius: 16px;
+  --shadow: 10px 10px 0 rgba(18, 33, 46, 0.12);
+}

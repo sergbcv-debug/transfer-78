@@ -1,0 +1,105 @@
+/* Тема «Тёмная с оранжевым» — та же подача, что у трансфера, но другой акцент.
+   Графит #0b0b0c + оранжевый #ff5a1f (чёрный текст на акценте: контраст 5,49).
+   Жёлтый не используем — это цвет такси и соседа по рынкау. */
+:root {
+  --ink: #f5f5f5;
+  --muted: #a8a8ad;
+  --line: #2a2a30;
+  --accent: #ff5a1f;
+  --accent-dark: #e64a12;
+  --accent-soft: #2a1a12;
+  --deep: #0b0b0c;
+  --deep-2: #161619;
+  --paper: #0b0b0c;
+  --white: #141417;
+  --dark: #0b0b0c;
+  --bg: #0b0b0c;
+  --tint: #101013;
+  --radius: 16px;
+  --shadow: 10px 10px 0 rgba(255, 90, 31, 0.22);
+}
+
+body { background: var(--deep); color: var(--ink); }
+
+/* шапка */
+.site-header { background: rgba(11, 11, 12, .96); border-bottom: 1px solid #24242a; }
+.logo, .nav a, .phone { color: var(--ink); }
+.logo-mark { background: var(--accent); color: #111; }
+.logo-accent { color: var(--accent); }
+.nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+.phone:hover { color: var(--accent); }
+
+/* кнопки: оранжевый с чёрным текстом */
+.btn { background: var(--accent); color: #111; border-color: var(--accent); box-shadow: 6px 6px 0 rgba(255,255,255,.85); }
+.btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #111; box-shadow: 3px 3px 0 rgba(255,255,255,.85); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); box-shadow: 6px 6px 0 var(--accent); }
+.btn-ghost:hover { background: var(--ink); color: #111; border-color: var(--ink); }
+
+/* первый экран */
+.hero-slider { background: var(--deep); border-bottom: 1px solid #24242a; }
+.hero-slider::before { background: var(--accent); clip-path: polygon(66% 0, 100% 0, 100% 100%, 52% 100%); opacity: .16; }
+.hero-slider::after { background: repeating-linear-gradient(135deg, rgba(255,90,31,.08) 0 2px, transparent 2px 16px); }
+.eyebrow { background: var(--accent); color: #111; }
+.slide-text h1 .hl, .slide-text h2 .hl { color: var(--accent); }
+.slide-lede { color: #b9b9bf; }
+.slide-visual img { background: #fff; border-color: var(--accent); box-shadow: 12px 12px 0 rgba(255,90,31,.35); }
+.slide-note { color: #b9b9bf; }
+.slide-note strong { color: var(--accent); }
+.slider-btn { background: var(--deep-2); border-color: var(--line); color: var(--ink); border-radius: 50%; }
+.slider-btn:hover { background: var(--accent); border-color: var(--accent); color: #111; }
+.dot { background: #3a3a42; }
+.dot.is-active { background: var(--accent); }
+
+/* цифры: оранжевая полоса с чёрным текстом */
+.stats { background: var(--accent); color: #111; }
+.stats-row { background: rgba(17,17,17,.18); border-top: 1px solid rgba(17,17,17,.18); }
+.stat { background: var(--accent); }
+.stat b { color: #111; }
+.stat span { color: #2a1a12; }
+
+/* секции */
+.section { background: var(--deep); }
+.section-alt { background: var(--deep-2); }
+.section-lede { color: var(--muted); }
+.features li { background: var(--deep-2); border-color: var(--line); border-top-color: var(--accent); }
+.features p { color: var(--muted); }
+.feature-icon { background: rgba(255,90,31,.14); }
+.feature-icon svg, .card .icon svg { stroke: var(--accent); }
+
+/* услуги */
+.section-dark-band { background: var(--deep-2); }
+.card { background: var(--deep); border-color: var(--line); }
+.card:hover { border-color: var(--accent); }
+.card p { color: var(--muted); }
+.card .price { color: var(--accent); }
+.card .icon { background: rgba(255,90,31,.14); }
+
+/* марки и таблица */
+.model { background: #fff; border-color: var(--accent); }
+.model p { color: #111; }
+.table-wrap { border-color: var(--accent); background: var(--deep-2); }
+caption { color: var(--ink); }
+thead th { background: var(--accent); color: #111; }
+th, td { border-bottom-color: var(--line); color: var(--ink); }
+tbody tr:nth-child(even) { background: #131316; }
+
+/* шаги */
+.steps li { background: var(--deep-2); border-color: var(--line); }
+.steps li::before { color: var(--accent); }
+.steps p { color: var(--muted); }
+
+/* запись */
+.section-dark { background: var(--deep); }
+.contacts dt { color: #8a8a92; }
+.contacts dd { color: var(--ink); }
+.contacts a { color: var(--accent); }
+.form { background: var(--deep-2); color: var(--ink); border-color: var(--accent); box-shadow: 12px 12px 0 rgba(255,90,31,.85); }
+label { color: var(--ink); }
+input, select, textarea { background: #0f0f12; color: var(--ink); border-color: #33333b; }
+input:focus, select:focus, textarea:focus { border-color: var(--accent); outline-color: rgba(255,90,31,.3); }
+.hint, .form-note { color: var(--muted); }
+.form-status.ok { color: #4ade80; }
+.form-status.err { color: #f87171; }
+
+.site-footer { background: #060607; color: #9a9aa2; }
+.credits { color: #7d7d86; }

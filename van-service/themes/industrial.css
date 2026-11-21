@@ -1,0 +1,13 @@
+/* Цех: светло-серый + чёрные рамки + оранжевый (рецепт E) */
+:root {
+  --ink: #18181b; --muted: #52525b; --line: #d4d4d8;
+  --accent: #c2410c; --accent-dark: #9a3412; --accent-soft: #ffedd5;
+  --deep: #18181b; --deep-2: #27272a;
+  --paper: #f4f4f5; --white: #ffffff; --dark: #18181b; --bg: #f4f4f5; --tint: #ffffff;
+  --radius: 4px;
+}
+h1, h2 { text-transform: uppercase; letter-spacing: -0.01em; }
+h3 { text-transform: none; }
+.btn { box-shadow: 5px 5px 0 var(--ink); }
+.card, .features li, .steps li { border-width: 2px; }
+.features li { border-top-width: 6px; }

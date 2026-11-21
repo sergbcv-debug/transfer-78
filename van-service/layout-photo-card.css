@@ -1,0 +1,219 @@
+/* Компоновка «фото-полоса + карточка поверх» для ВАН-СЕРВИС.
+   Работает поверх styles.css и темы premium. */
+
+.hero-band {
+  position: relative;
+  background: var(--deep);
+  color: #fff;
+  overflow: hidden;
+  padding: 56px 0 44px;
+}
+.hero-band::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 18px);
+  pointer-events: none;
+}
+.hero-band-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(320px, 560px) 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* белая карточка поверх тёмной полосы */
+.hero-card {
+  background: #fff;
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .35);
+  margin-bottom: -70px;
+}
+.hero-card h1 { font-size: clamp(28px, 3.2vw, 44px); margin-bottom: 14px; }
+.hero-card-lede { color: var(--muted); font-size: 17px; margin-bottom: 20px; }
+.hero-callback { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: end; }
+.hero-callback .btn { height: 52px; }
+.hero-rating {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.hero-rating b { color: var(--ink); }
+
+/* слайдер справа */
+.hero-visual { position: relative; }
+.hero-visual .slides { position: relative; }
+.hero-visual .slide { display: none; margin: 0; }
+.hero-visual .slide.is-active { display: block; }
+.hero-visual .slide img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+}
+.hero-visual .slider-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 0 0;
+}
+
+/* полоса фактов под первым экраном */
+.trust-strip {
+  background: var(--deep);
+  color: #fff;
+  padding: 92px 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.trust-strip ul {
+  width: min(1200px, 100% - 40px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 24px;
+  list-style: none;
+  padding: 0;
+}
+.trust-strip li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #dbe4ee;
+}
+.trust-strip li::before { content: "✓"; color: var(--accent); font-weight: 800; }
+
+/* каталог услуг: строка + цена справа */
+.service-list { list-style: none; margin: 0; padding: 0; }
+.service-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.service-list li:first-child { border-top: 1px solid var(--line); }
+.service-list h3 { margin: 0 0 6px; font-size: 20px; }
+.service-list p { margin: 0; color: var(--muted); font-size: 16px; }
+.service-price {
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .hero-band { padding-top: 28px; }
+  .hero-band-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-visual { order: -1; }
+  .hero-visual .slide img { max-height: 220px; }
+  .hero-card { margin-bottom: 0; padding: 24px; }
+  .hero-callback { grid-template-columns: 1fr; }
+  .trust-strip { padding: 24px 0 18px; }
+  .service-list li { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* фото-полоса */
+.photo-band { position: relative; }
+.photo-band img { width: 100%; height: 440px; object-fit: cover; object-position: center 58%; display: block; }
+.photo-band-note {
+  position: absolute;
+  left: max(20px, calc((100% - 1200px) / 2));
+  bottom: 32px;
+  max-width: 560px;
+  background: rgba(11, 27, 58, .9);
+  color: #fff;
+  padding: 22px 24px;
+  border-radius: 16px;
+}
+.photo-band-note p { margin: 0 0 8px; color: #dbe4ee; font-size: 16px; }
+.photo-band-note p:last-child { margin-bottom: 0; }
+.photo-band-kicker {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 12px;
+  color: #ffb3b9 !important;
+  margin-bottom: 10px !important;
+}
+.photo-credit { font-size: 12px !important; color: #93a4b8 !important; }
+
+@media (max-width: 900px) {
+  .photo-band img { height: 300px; }
+  .photo-band-note { position: static; border-radius: 0; }
+}
+
+/* фотоблок «как работаем» */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.photo-grid li { background: #fff; border-radius: var(--radius); overflow: hidden; }
+.photo-grid img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.photo-caption { margin: 14px 18px 6px; font-weight: 700; font-size: 17px; }
+.photo-credit { margin: 0 18px 16px; font-size: 12px; color: var(--muted); }
+
+
+
+
+
+/* --- фото фоном первого экрана, карточка вверху справа --- */
+.hero-band {
+  position: relative;
+  background: linear-gradient(120deg, #0d2145 0%, #0b1b3a 55%, #081428 100%);
+  padding: 36px 0 36px;
+}
+.hero-photo {
+  position: absolute;
+  left: max(18px, calc((100% - 1240px) / 2));
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(58%, 620px);
+  height: 440px;
+  object-fit: cover;
+  object-position: center 55%;
+  border-radius: 18px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .45);
+  display: block;
+}
+.hero-band::before { display: none; }
+.hero-band-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 560px;
+  max-width: none;
+  padding-right: 18px;
+}
+.hero-visual { display: none; }
+.hero-card {
+  width: min(470px, 100%);
+  margin: 0;
+  padding: 26px 28px 24px;
+}
+.hero-card h1 { font-size: clamp(26px, 2.6vw, 36px); }
+.hero-card-lede { font-size: 15px; margin-bottom: 16px; }
+
+@media (max-width: 900px) {
+  .hero-band { padding: 20px 0 16px; background-position: 58% 32%; }
+  .hero-band-inner { display: block; min-height: 0; }
+  .hero-card { width: 100%; padding: 20px; }
+}
+
+/* форма в карточке первого экрана — в одну колонку */
+.hero-card .hero-callback { grid-template-columns: 1fr; gap: 10px; }
+.hero-card .hero-callback .btn { width: 100%; height: 48px; }
+.hero-card { padding-bottom: 28px; }

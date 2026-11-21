@@ -1,0 +1,10 @@
+/* Local RU: белый + зелёный (рецепт I, как Moscleaning) */
+:root {
+  --ink: #17211a; --muted: #4c5a50; --line: #dfe7e0;
+  --accent: #15803d; --accent-dark: #116232; --accent-soft: #e3f4e8;
+  --deep: #10281a; --deep-2: #1b3a27;
+  --paper: #ffffff; --white: #ffffff; --dark: #10281a; --bg: #ffffff; --tint: #f4faf5;
+  --radius: 12px;
+}
+.btn { box-shadow: none; border-radius: 10px; }
+.btn:hover { transform: none; box-shadow: 0 10px 22px rgba(26, 158, 59, .25); }

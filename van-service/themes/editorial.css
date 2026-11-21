@@ -1,0 +1,12 @@
+/* Editorial Lux: тёплый белый + засечки (рецепт K, как The Hoxton) */
+:root {
+  --ink: #1c1a17; --muted: #5a544c; --line: #e6ded2;
+  --accent: #8a6a3b; --accent-dark: #6d5330; --accent-soft: #f3ebdf;
+  --deep: #241f18; --deep-2: #332b21;
+  --paper: #f7f3ec; --white: #fffdf8; --dark: #241f18; --bg: #f7f3ec; --tint: #fffdf8;
+  --radius: 2px;
+}
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: -0.01em; }
+.btn { box-shadow: none; border-radius: 0; text-transform: none; }
+.btn:hover { transform: none; }
+.card, .features li, .steps li { border-width: 1px; }

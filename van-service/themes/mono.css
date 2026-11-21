@@ -1,0 +1,11 @@
+/* Mono: чёрное на белом, без цвета (рецепт F) */
+:root {
+  --ink: #0a0a0a; --muted: #4a4a4a; --line: #111111;
+  --accent: #111111; --accent-dark: #000000; --accent-soft: #f0f0f0;
+  --deep: #0a0a0a; --deep-2: #1a1a1a;
+  --paper: #ffffff; --white: #ffffff; --dark: #0a0a0a; --bg: #ffffff; --tint: #f7f7f7;
+  --radius: 0px;
+}
+.btn { box-shadow: none; border-radius: 0; }
+.btn:hover { transform: none; }
+.card, .features li, .steps li, .model, .table-wrap { border-width: 2px; border-radius: 0; }

@@ -1,0 +1,13 @@
+/* Premium Trades: тёмно-синий + красный (рецепт H, как Pimlico) */
+:root {
+  --ink: #0b1b3a; --muted: #4a5a72; --line: #dbe2ec;
+  --accent: #d0021b; --accent-dark: #b00016; --accent-soft: #fde8ea;
+  --deep: #0b1b3a; --deep-2: #132a52;
+  --paper: #f7f9fc; --white: #ffffff; --dark: #0b1b3a; --bg: #f7f9fc; --tint: #ffffff;
+  --radius: 8px;
+}
+.btn { box-shadow: none; border-radius: 6px; }
+.btn:hover { transform: none; box-shadow: 0 10px 24px rgba(208, 2, 27, .25); }
+.stats { background: var(--deep); }
+.stat b { color: #ffffff; }
+.stat span { color: #b9c6d8; }

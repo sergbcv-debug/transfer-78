@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ремонт микроавтобусов — ВАН-СЕРВИС, Санкт-Петербург</title>
+<meta name="description" content="Демонстрационный лендинг автосервиса: ремонт микроавтобусов Fiat Ducato, Ford Transit, Mercedes Sprinter, Renault Master, Peugeot Boxer, IVECO Daily и ГАЗ Газель. Бренд и контакты вымышлены.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="themes/premium.css">
+<link rel="stylesheet" href="layout-photo-card.css">
+<link rel="stylesheet" href="layout-sixt.css">
+</head>
+<body>
+<a class="skip" href="#top">К основному содержимому</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="ВАН-СЕРВИС — на главную">
+      <span class="logo-mark" aria-hidden="true">V</span>
+      <span>VAN<span class="logo-accent">SERVICE</span></span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <ul class="nav">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#models">Марки</a></li>
+        <li><a href="#prices">Цены</a></li>
+        <li><a href="#booking">Запись</a></li>
+      </ul>
+    </nav>
+    <a class="phone" href="#booking">Оставить заявку</a>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+
+  <!-- первый экран: тёмная полоса, авто-слайдер справа, белая карточка поверх -->
+    <!-- первый экран в стиле Sixt: фото + текст поверх -->
+  <section class="hero-sixt" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-sixt-media">
+        <img src="assets/photos/van-studio-wide.jpg" width="2000" height="900"
+             alt="Микроавтобус в тёмной студии">
+        <div class="hero-sixt-text">
+          <p class="hero-sixt-kicker">Санкт-Петербург · демонстрационный проект</p>
+          <h1 id="hero-title">Ремонт микроавтобусов и лёгких грузовиков</h1>
+          <p class="hero-sixt-lede">Fiat Ducato, Ford Transit, Mercedes Sprinter, Renault Master,
+            Peugeot Boxer, Citroen Jumper, IVECO Daily, ГАЗ Газель. 10 лет на рынке.</p>
+          <div class="hero-sixt-actions">
+            <a class="btn btn-pill" href="#booking">Записаться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- полоса записи под первым экраном -->
+  <section class="hero-strip" aria-label="Быстрая запись">
+    <div class="wrap">
+      <div class="hero-strip-inner">
+        <p class="hero-strip-title">Оставьте телефон — перезвоним за 15 минут
+          и назовём точное время приезда</p>
+        <form class="hero-strip-form" novalidate>
+          <label class="hero-strip-label" for="strip-phone">Телефон</label>
+          <input id="strip-phone" name="phone" type="tel" inputmode="tel"
+                 placeholder="+7 (___) ___-__-__" autocomplete="tel">
+          <button class="btn" type="submit">Жду звонка</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- полоса фактов -->
+  <section class="trust-strip" aria-label="Коротко о сервисе">
+    <ul>
+      <li>Только микроавтобусы и лёгкие грузовики</li>
+      <li>Цена до начала работ</li>
+      <li>Показываем снятые детали</li>
+      <li>Запчасти на месте</li>
+    </ul>
+  </section>
+<!-- услуги: каталог с ценами и сроком -->
+  <section id="services" class="section" aria-labelledby="services-title">
+    <div class="wrap">
+      <h2 id="services-title">Услуги и цены</h2>
+      <p class="section-lede">Шесть направлений с ориентировочной ценой. Итог зависит от модели
+        и состояния машины — называем после осмотра, до начала работ.</p>
+      <ul class="service-list">
+        <li>
+          <div>
+            <h3>ТО и расходники</h3>
+            <p>Масло, воздушный и топливный фильтр, антифриз, ремни, диагностика.</p>
+          </div>
+          <p class="service-price">по запросу</p>
+        </li>
+        <li>
+          <div>
+            <h3>Тормозная система</h3>
+            <p>Колодки, диски, суппорты, прокачка и замена жидкости.</p>
+          </div>
+          <p class="service-price">по запросу</p>
+        </li>
+        <li>
+          <div>
+            <h3>Подвеска и рулевое</h3>
+            <p>Амортизаторы, шаровые, рычаги, тяги и наконечники, рессоры, ступицы, ГУР.</p>
+          </div>
+          <p class="service-price">от 2 000 ₽</p>
+        </li>
+        <li>
+          <div>
+            <h3>Двигатель и топливная</h3>
+            <p>Топливная система, радиатор охлаждения, течи, посторонние звуки.</p>
+          </div>
+          <p class="service-price">по запросу</p>
+        </li>
+        <li>
+          <div>
+            <h3>Сцепление и МКПП</h3>
+            <p>Замена сцепления, ремонт коробки, карданы, приводы.</p>
+          </div>
+          <p class="service-price">по запросу</p>
+        </li>
+        <li>
+          <div>
+            <h3>Кузовной ремонт</h3>
+            <p>От локальной правки до покраски.</p>
+          </div>
+          <p class="service-price">по запросу</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- фото из цеха -->
+  <section class="section section-alt" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 id="work-title">Как проходят работы</h2>
+      <p class="section-lede">Показываем, что сняли и что заменили. Никаких «сделали и уехали».</p>
+      <ul class="photo-grid">
+        <li>
+          <img src="assets/photos/photo-hands-opt.jpg" width="800" height="533" loading="lazy"
+               alt="Мастер работает с двигателем микроавтобуса">
+          <p class="photo-caption">Работаем при вас и показываем каждый этап</p>
+          <p class="photo-credit">Фото: Kato Blackmore, Unsplash</p>
+        </li>
+        <li>
+          <img src="assets/photos/photo-oil-opt.jpg" width="800" height="533" loading="lazy"
+               alt="Замена масла в двигателе автомобиля">
+          <p class="photo-caption">Расходники держим на месте — без «приезжайте завтра»</p>
+          <p class="photo-credit">Фото: Dextar Studio, Unsplash</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- марки -->
+  <section id="models" class="section section-alt" aria-labelledby="models-title">
+    <div class="wrap">
+      <h2 id="models-title">С какими машинами работаем</h2>
+      <p class="section-lede">Если вашей модели нет в списке — позвоните: скорее всего, работали и с ней.</p>
+      <ul class="models">
+        <li class="model"><img src="assets/ducato.jpg" width="600" height="400" loading="lazy" alt="Fiat Ducato"><p>Fiat Ducato</p></li>
+        <li class="model"><img src="assets/transit.jpg" width="600" height="400" loading="lazy" alt="Ford Transit"><p>Ford Transit</p></li>
+        <li class="model"><img src="assets/sprinter.jpg" width="600" height="400" loading="lazy" alt="Mercedes-Benz Sprinter"><p>Mercedes Sprinter</p></li>
+        <li class="model"><img src="assets/master.jpg" width="600" height="400" loading="lazy" alt="Renault Master"><p>Renault Master</p></li>
+        <li class="model"><img src="assets/boxer.jpg" width="600" height="400" loading="lazy" alt="Peugeot Boxer"><p>Peugeot Boxer</p></li>
+        <li class="model"><img src="assets/iveco.jpg" width="600" height="400" loading="lazy" alt="IVECO Daily"><p>IVECO Daily</p></li>
+        <li class="model"><img src="assets/gazelle-next.png" width="600" height="400" loading="lazy" alt="ГАЗ Газель Next"><p>ГАЗ Газель Next</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- цены -->
+  <section id="prices" class="section" aria-labelledby="prices-title">
+    <div class="wrap">
+      <h2 id="prices-title">Акции</h2>
+      <p class="section-lede">Две работы с открытой ценой. Полный перечень по вашей модели
+        пришлём по запросу.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Таблица цен на работы">
+        <table>
+          <caption>Цены на работы, ноябрь 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Работа</th>
+              <th scope="col">Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Замена двух рулевых тяг и двух наконечников</th>
+              <td>2 000 ₽</td>
+            </tr>
+            <tr>
+              <th scope="row">Комплект сайлентблоков двух передних рычагов</th>
+              <td>4 000 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- запись -->
+  <section id="booking" class="section-dark" aria-labelledby="booking-title">
+    <div class="wrap booking-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">Заявка</p>
+        <h2 id="booking-title">Записаться на ремонт</h2>
+        <p class="dark-lede">Оставьте телефон — перезвоним в рабочее время и согласуем время визита.</p>
+        <dl class="contacts">
+          <dt>Город</dt>
+          <dd>Санкт-Петербург, адрес — по запросу</dd>
+          <dt>Связь</dt>
+          <dd>Через форму на этой странице</dd>
+          <dt>Режим работы</dt>
+          <dd>Пн–сб, 9:00–19:00</dd>
+        </dl>
+      </div>
+
+      <form class="form" id="booking-form" novalidate>
+        <div class="field">
+          <label for="name">Как к вам обращаться</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                 placeholder="+7 (___) ___-__-__" aria-describedby="phone-hint" required>
+          <p class="hint" id="phone-hint">Не меньше 10 цифр, можно с кодом +7.</p>
+        </div>
+        <div class="field field-wide">
+          <label for="car">Марка и модель</label>
+          <select id="car" name="car">
+            <option>Fiat Ducato</option>
+            <option>Ford Transit</option>
+            <option>Mercedes Sprinter</option>
+            <option>Renault Master</option>
+            <option>Peugeot Boxer / Citroen Jumper</option>
+            <option>IVECO Daily</option>
+            <option>ГАЗ Газель / Газель Next</option>
+            <option>Другая модель</option>
+          </select>
+        </div>
+        <div class="field field-wide">
+          <label for="comment">Что нужно</label>
+          <textarea id="comment" name="comment" rows="3" placeholder="Что беспокоит и когда удобно приехать"></textarea>
+        </div>
+        <div class="field field-wide">
+          <button class="btn" type="submit" id="submit">Отправить заявку</button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных
+            данных для связи по заявке.</p>
+        </div>
+        <p class="form-status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 ВАН-СЕРВИС. Демонстрационный проект: бренд, адрес и контакты вымышлены.</p>
+    <p class="credits">Фото цеха — Unsplash (Kato Blackmore, Dextar Studio). Остальные изображения — демонстрационные.</p>
+  </div>
+</footer>
+
+<script>
+  // форма в первом экране: переносим телефон в основную заявку
+  (function () {
+    var hero = document.querySelector('.hero-callback');
+    if (!hero) return;
+    hero.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var val = document.getElementById('hero-phone').value.trim();
+      var form = document.getElementById('booking-form');
+      if (val && form) form.elements['phone'].value = val;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+</script>
+<script src="slider.js"></script>
+<script src="form.js"></script>
+
+<script>
+  // быстрая запись: телефон переносится в основную форму
+  (function () {
+    var strip = document.querySelector('.hero-strip-form');
+    if (!strip) return;
+    strip.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var val = document.getElementById('strip-phone').value.trim();
+      var form = document.getElementById('booking-form');
+      if (form) {
+        if (val) form.elements['phone'].value = val;
+        document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

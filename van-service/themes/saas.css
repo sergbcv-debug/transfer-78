@@ -1,0 +1,13 @@
+/* SaaS Clean: белый + синий #635bff (рецепт J, как Stripe) */
+:root {
+  --ink: #0f172a; --muted: #475467; --line: #e6e8ef;
+  --accent: #635bff; --accent-dark: #4f46e5; --accent-soft: #eeecff;
+  --deep: #0a0a12; --deep-2: #14142a;
+  --paper: #ffffff; --white: #ffffff; --dark: #0a0a12; --bg: #ffffff; --tint: #f7f8fc;
+  --radius: 10px;
+}
+h1, h2 { letter-spacing: -0.03em; }
+.btn { box-shadow: none; border-radius: 8px; }
+.btn:hover { transform: none; box-shadow: 0 8px 20px rgba(99, 91, 255, .28); }
+.card, .features li, .steps li, .table-wrap, .slide-visual img, .model { border-width: 1px; }
+.section-dark-band { background: var(--deep-2); }

@@ -1,0 +1,81 @@
+/* Первый экран в стиле Sixt: фото с текстом поверх */
+.hero-sixt { background: #0b1b3a; padding: 26px 0 30px; }
+.hero-sixt-media { position: relative; border-radius: 18px; overflow: hidden; }
+.hero-sixt-media img {
+  width: 100%; height: 560px; object-fit: cover; object-position: 0% 50%; display: block;
+}
+.hero-sixt-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5,11,22,.10) 0%, rgba(5,11,22,.25) 55%, rgba(5,11,22,.62) 100%),
+              linear-gradient(260deg, rgba(5,11,22,.45) 0%, rgba(5,11,22,.12) 55%, rgba(5,11,22,0) 100%);
+}
+.hero-sixt-text { position: absolute; left: auto; right: 46px; bottom: 34px; z-index: 2; color: #fff; max-width: 560px; }
+.hero-sixt-kicker {
+  text-transform: uppercase; letter-spacing: .12em; font-size: 12px;
+  color: #ffc2c8; margin: 0 0 10px; font-weight: 700; text-shadow: 0 1px 8px rgba(0, 0, 0, .6);
+}
+.hero-sixt-text h1 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
+  font-size: clamp(28px, 3.6vw, 52px); line-height: 1.06; margin: 0 0 12px;
+  text-transform: uppercase; letter-spacing: -.01em; max-width: 22ch;
+}
+.hero-sixt-lede { color: #e6edf6; font-size: 17px; max-width: 62ch; margin: 0 0 18px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .60); }
+.hero-sixt-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.btn-pill { border-radius: 999px; padding: 14px 30px; font-size: 16px; }
+.hero-sixt-phone {
+  color: #fff; font-weight: 800; font-size: 18px; text-decoration: none;
+  border-bottom: 2px solid rgba(255,255,255,.45); padding-bottom: 2px;
+}
+.hero-sixt-facts { color: #dfe7f1; font-size: 14px; margin: 14px 0 0; text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.hero-sixt-facts b { color: #fff; }
+
+@media (max-width: 900px) {
+  .hero-sixt { padding: 16px 0 20px; }
+  .hero-sixt-media { background: #0d2145; }
+  .hero-sixt-media img { height: 250px; object-position: 8% 45%; border-radius: 14px 14px 0 0; }
+  .hero-sixt-media::after { display: none; }
+  .hero-sixt-text { position: static; padding: 18px 16px 20px; max-width: none; }
+  .hero-sixt-text { left: auto; right: 18px; bottom: 20px; max-width: calc(100% - 36px); }
+  .hero-sixt-text h1 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .55); font-size: 26px; max-width: none; }
+  .hero-sixt-lede { font-size: 15px; margin-bottom: 14px; }
+  .btn-pill { padding: 13px 24px; }
+  .hero-sixt-phone { font-size: 16px; }
+}
+
+/* полоса быстрой записи под первым экраном */
+.hero-strip { margin-top: -46px; position: relative; z-index: 5; padding-bottom: 34px; }
+.hero-strip-inner {
+  background: #fff; border-radius: 18px; padding: 22px 26px;
+  box-shadow: 0 22px 50px rgba(6, 14, 30, .35);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-strip-title { margin: 0; font-weight: 700; font-size: 17px; color: #0b1b3a; max-width: 46ch; }
+.hero-strip-form { display: flex; align-items: center; gap: 10px; flex: 1 1 380px; }
+.hero-strip-label {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.hero-strip-form input {
+  flex: 1 1 auto; min-width: 180px; height: 48px; border-radius: 10px;
+  border: 1px solid #c9d3e0; padding: 0 14px; font-size: 16px; color: #101828;
+}
+.hero-strip-form input:focus { outline: 3px solid rgba(208, 2, 27, .35); outline-offset: 1px; }
+.hero-strip-form .btn { height: 48px; padding: 0 28px; border-radius: 10px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .hero-strip { margin-top: -18px; padding-bottom: 22px; }
+  .hero-strip-inner { padding: 18px; gap: 14px; }
+  .hero-strip-title { font-size: 15px; }
+  .hero-strip-form { flex: 1 1 100%; }
+}
+
+@media (max-width: 600px) {
+  .hero-strip { margin-top: -14px; }
+  .hero-strip-inner { padding: 16px; }
+  .hero-strip-form { flex-direction: column; align-items: stretch; gap: 8px; }
+  .hero-strip-form input { width: 100%; }
+  .hero-strip-form .btn { width: 100%; }
+}
