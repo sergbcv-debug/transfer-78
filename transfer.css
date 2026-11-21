@@ -168,3 +168,53 @@
 }
 .map-box .leaflet-container { background: #111; font: inherit; }
 @media (max-width: 700px) { .map-box { height: 340px; border-radius: 12px; } }
+
+/* ссылка «открыть карту» в поле адреса */
+.map-link {
+  color: #ffd400;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 212, 0, .55);
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.map-link:hover { border-bottom-color: #ffd400; }
+
+/* модальное окно с картой */
+.map-modal {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(6, 6, 8, .82);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.map-modal[hidden] { display: none; }
+.map-modal-inner {
+  width: min(1100px, 100%);
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+}
+.map-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  color: #fff; font-size: 16px;
+}
+.map-modal-close {
+  background: transparent; border: 0; color: #fff;
+  font-size: 26px; line-height: 1; cursor: pointer; padding: 0 6px;
+}
+.map-modal-close:hover { color: #ffd400; }
+.map-box { height: 460px; }
+.map-modal-hint {
+  margin: 0; padding: 12px 18px 16px;
+  color: #d6d6db; font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .map-modal { padding: 10px; }
+  .map-box { height: 360px; }
+  .map-modal-head { font-size: 15px; }
+}

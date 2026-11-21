@@ -71,7 +71,7 @@
           </select>
         </div>
         <div class="field">
-          <label for="addr">Адрес назначения</label>
+          <label for="addr">Адрес назначения <a href="#map-modal" class="map-link" id="open-map">(открыть карту)</a></label>
           <input id="addr" type="text" placeholder="улица и дом, например: Невский пр., 100"
                  autocomplete="street-address">
           <p class="hint" id="addr-hint">Расстояние посчитаем по карте — примерно, точно подтвердим по телефону.</p>
@@ -205,19 +205,7 @@
       </ol>
     </div>
   </section>
-
-  <section id="geo" class="section section-alt" aria-labelledby="geo-title">
-    <div class="wrap">
-      <h2 id="geo-title">Откуда забираем</h2>
-      <p class="section-lede">Пулково и все вокзалы Петербурга. Машина ждёт на стоянке рядом,
-        подача — 15 минут после выхода.</p>
-      <div id="map" class="map-box" role="application"
-           aria-label="Карта: выберите точку назначения"></div>
-<p class="map-credit">Карта — OpenStreetMap. Ткните точку назначения.</p>
-    </div>
-  </section>
-
-  <section id="faq" class="section section-alt" aria-labelledby="faq-title">
+<section id="faq" class="section section-alt" aria-labelledby="faq-title">
     <div class="wrap">
       <h2 id="faq-title">Частые вопросы</h2>
       <details class="faq-item">
@@ -297,7 +285,18 @@
 
 <script src="calc.js?v=3"></script>
 <script src="form.js?v=3"></script>
+<div id="map-modal" class="map-modal" hidden>
+  <div class="map-modal-inner" role="dialog" aria-modal="true" aria-label="Выбор точки на карте">
+    <div class="map-modal-head">
+      <strong>Ткните точку назначения</strong>
+      <button type="button" class="map-modal-close" id="close-map" aria-label="Закрыть карту">×</button>
+    </div>
+    <div id="map" class="map-box"></div>
+    <p class="map-modal-hint" id="map-modal-hint">Откуда: выберите в поле. Клик по метке станции выберет её.</p>
+  </div>
+</div>
+
   <script src="assets/leaflet/leaflet.js"></script>
-  <script src="map.js?v=1"></script>
+  <script src="map.js?v=2"></script>
 </body>
 </html>
