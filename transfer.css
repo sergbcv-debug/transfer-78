@@ -1,0 +1,142 @@
+/* Стили страницы трансфера: калькулятор и FAQ (тёмная тема уже подключена). */
+
+/* калькулятор в первом экране */
+.calc-card {
+  background: #141417;
+  border: 2px solid var(--accent);
+  padding: 26px;
+  box-shadow: 12px 12px 0 rgba(255, 212, 0, 0.35);
+}
+.calc-title {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.calc-card .field { margin-bottom: 14px; }
+.calc-card label { color: #e6e6ea; }
+
+.calc-options {
+  border: 0;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.calc-options legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #8a8a92;
+}
+.calc-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #e6e6ea;
+}
+.calc-options input { width: auto; }
+
+.calc-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a30;
+  color: #b9b9bf;
+  font-size: 15px;
+}
+.calc-total strong {
+  color: var(--accent);
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.calc-note { margin: 0 0 18px; font-size: 13px; color: #8a8a92; }
+.calc-go { width: 100%; justify-content: center; }
+
+/* FAQ */
+.faq-item {
+  background: #141417;
+  border: 1px solid #2a2a30;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 17px;
+  color: #fff;
+}
+.faq-item summary::marker { color: var(--accent); }
+.faq-item p { margin: 12px 0 0; color: #b9b9bf; }
+.faq-item[open] { border-color: var(--accent); }
+
+@media (max-width: 900px) {
+  .calc-card { box-shadow: 8px 8px 0 rgba(255, 212, 0, 0.35); }
+  .calc-total strong { font-size: 28px; }
+}
+
+/* ---------- раскладка первого экрана и полосы цифр ---------- */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep);
+  border-bottom: 1px solid var(--line);
+}
+.hero-slider::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--accent);
+  clip-path: polygon(58% 0, 100% 0, 100% 100%, 72% 100%);
+  opacity: .12;
+  pointer-events: none;
+}
+.hero-slider .wrap { position: relative; z-index: 1; }
+
+.slide-inner {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 44px;
+  align-items: center;
+  padding: 64px 0 56px;
+}
+.slide-text h1, .slide-text h2 { margin-bottom: 18px; }
+.slide-text h1 .hl { color: var(--accent); }
+.slide-lede { font-size: 19px; color: var(--muted); max-width: 44ch; }
+.eyebrow-light { background: var(--accent); color: #111; }
+
+/* полоса цифр */
+.stats { background: var(--accent); color: #111; }
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: rgba(17, 17, 17, 0.18);
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+}
+.stat { background: var(--accent); padding: 26px 20px; }
+.stat b {
+  display: block;
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+  color: #111;
+}
+.stat span { display: block; font-size: 15px; color: #33280f; }
+
+@media (max-width: 900px) {
+  .slide-inner { grid-template-columns: 1fr; gap: 28px; padding: 36px 0 32px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}

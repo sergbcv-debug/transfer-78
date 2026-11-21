@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Трансфер 78 — такси и трансфер в Санкт-Петербурге</title>
+<meta name="description" content="Трансфер по Санкт-Петербургу и области: аэропорт Пулково, вокзалы, Петергоф, Кронштадт, Выборг. Фиксированная цена до поездки.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="themes/dark-yellow.css">
+<link rel="stylesheet" href="transfer.css">
+</head>
+<body>
+<a class="skip" href="#top">К основному содержимому</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="Трансфер 78 — на главную">
+      <span class="logo-mark" aria-hidden="true">78</span>
+      <span>Трансфер<span class="logo-accent">78</span></span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <ul class="nav">
+        <li><a href="#calc">Стоимость</a></li>
+        <li><a href="#tariffs">Тарифы</a></li>
+        <li><a href="#how">Как заказать</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#booking">Заявка</a></li>
+      </ul>
+    </nav>
+    <a class="phone" href="tel:+78120000000">+7 (812) 000-00-00</a>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+
+  <section class="hero-slider">
+    <div class="wrap slide-inner">
+      <div class="slide-text">
+        <p class="eyebrow">Санкт-Петербург · аэропорт и вокзалы</p>
+        <h1>Трансфер с <span class="hl">фиксированной</span> ценой</h1>
+        <p class="slide-lede">Пулково, Московский и Ладожский вокзалы, Петергоф, Кронштадт,
+          Выборг. Цену называем до поездки — в пути она не меняется.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#calc">Рассчитать поездку</a>
+          <a class="btn btn-ghost" href="tel:+78120000000">Позвонить</a>
+        </div>
+      </div>
+
+      <div class="calc-card" id="calc">
+        <h2 class="calc-title">Расчёт стоимости</h2>
+        <div class="field">
+          <label for="cls">Класс автомобиля</label>
+          <select id="cls">
+            <option value="35" data-name="Эконом" data-seats="3">Эконом — до 3 пассажиров</option>
+            <option value="45" data-name="Комфорт" data-seats="3">Комфорт — до 3 пассажиров</option>
+            <option value="70" data-name="Бизнес" data-seats="3">Бизнес — до 3 пассажиров</option>
+            <option value="55" data-name="Минивэн" data-seats="6">Минивэн — до 6 пассажиров</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="km">Расстояние, км</label>
+          <input id="km" type="number" min="1" max="600" step="1" value="25" inputmode="numeric">
+        </div>
+        <fieldset class="calc-options">
+          <legend>Дополнительно</legend>
+          <label><input type="checkbox" id="opt-seat" value="300"> Детское кресло</label>
+          <label><input type="checkbox" id="opt-sign" value="500"> Встреча с табличкой</label>
+        </fieldset>
+        <p class="calc-total">
+          <span>Предварительно</span>
+          <strong id="total">1 075 ₽</strong>
+        </p>
+        <p class="calc-note" id="calc-note">Посадка 200 ₽ + 25 км × 35 ₽</p>
+        <a class="btn calc-go" href="#booking">Заказать по этой цене</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Коротко о сервисе">
+    <div class="wrap stats-row">
+      <div class="stat"><b>24/7</b><span>принимаем заявки</span></div>
+      <div class="stat"><b>15</b><span>минут — средняя подача</span></div>
+      <div class="stat"><b>4</b><span>класса автомобилей</span></div>
+      <div class="stat"><b>0</b><span>доплат в пути</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap">
+      <h2 id="why-title">Почему нас выбирают</h2>
+      <p class="section-lede">Три вещи, которые проверяются в первой поездке.</p>
+      <ul class="features">
+        <li>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M6 9l6-6 6 6"/></svg>
+          </span>
+          <h3>Цена известна заранее</h3>
+          <p>Считаем до поездки и фиксируем. Пробки и объезды — наш риск, не ваш.</p>
+        </li>
+        <li>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <h3>Подача без опозданий</h3>
+          <p>Встречаем по номеру рейса: если самолёт сел позже, водитель ждёт.</p>
+        </li>
+        <li>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <h3>Без сюрпризов в счёте</h3>
+          <p>Багаж, детское кресло и встреча — в смете заранее, а не у машины.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tariffs" class="section section-alt" aria-labelledby="tariffs-title">
+    <div class="wrap">
+      <h2 id="tariffs-title">Тарифы</h2>
+      <p class="section-lede">Цена за поездку по городу и ближайшим пригородам. Дальние
+        маршруты считаем по калькулятору выше.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Таблица тарифов">
+        <table>
+          <caption>Тарифы на поездки, действуют с 01.11.2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Класс</th>
+              <th scope="col">Пассажиры</th>
+              <th scope="col">Пулково → центр</th>
+              <th scope="col">По городу, ₽/км</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Эконом</th>
+              <td>до 3</td>
+              <td>1 200 ₽</td>
+              <td>35 ₽</td>
+            </tr>
+            <tr>
+              <th scope="row">Комфорт</th>
+              <td>до 3</td>
+              <td>1 700 ₽</td>
+              <td>45 ₽</td>
+            </tr>
+            <tr>
+              <th scope="row">Бизнес</th>
+              <td>до 3</td>
+              <td>2 800 ₽</td>
+              <td>70 ₽</td>
+            </tr>
+            <tr>
+              <th scope="row">Минивэн</th>
+              <td>до 6</td>
+              <td>2 200 ₽</td>
+              <td>55 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="calc-note">Посадка — 200 ₽. Багаж, детское кресло и встреча с табличкой
+        указаны в калькуляторе отдельными пунктами.</p>
+    </div>
+  </section>
+
+  <section id="how" class="section" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">Как заказать</h2>
+      <ol class="steps">
+        <li>
+          <h3>Заявка</h3>
+          <p>Телефон или форма: откуда, куда, время, число пассажиров.</p>
+        </li>
+        <li>
+          <h3>Подтверждение цены</h3>
+          <p>Присылаем стоимость и данные машины. Меняется только по вашей просьбе.</p>
+        </li>
+        <li>
+          <h3>Поездка</h3>
+          <p>Водитель на месте за 10 минут до времени. Оплата наличными или переводом.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title">Частые вопросы</h2>
+      <details class="faq-item">
+        <summary>Что если самолёт задержат?</summary>
+        <p>Встречаем по номеру рейса. Если самолёт сел позже — водитель ждёт, доплата за ожидание
+          в пределах часа не берётся.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли с животными?</summary>
+        <p>Да, в переноске. Скажите при заказе, чтобы подобрали машину.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как оплатить?</summary>
+        <p>Наличными водителю или переводом по счёту. Для организаций — счёт и закрывающие
+          документы.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько ждать машину?</summary>
+        <p>По городу — в среднем 15 минут. На дальние маршруты и аэропорт — по времени заявки.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="booking" class="section-dark" aria-labelledby="booking-title">
+    <div class="wrap booking-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">Заявка</p>
+        <h2 id="booking-title">Заказать трансфер</h2>
+        <p class="dark-lede">Оставьте телефон — перезвоним в течение 15 минут и подтвердим цену.</p>
+        <dl class="contacts">
+          <dt>Диспетчерская</dt>
+          <dd><a href="tel:+78120000000">+7 (812) 000-00-00</a></dd>
+          <dt>Работаем</dt>
+          <dd>Круглосуточно, без выходных</dd>
+          <dt>Город</dt>
+          <dd>Санкт-Петербург и Ленинградская область</dd>
+        </dl>
+      </div>
+
+      <form class="form" id="booking-form" novalidate>
+        <div class="field">
+          <label for="name">Как к вам обращаться</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                 placeholder="+7 (___) ___-__-__" aria-describedby="phone-hint" required>
+          <p class="hint" id="phone-hint">Не меньше 10 цифр, можно с кодом +7.</p>
+        </div>
+        <div class="field field-wide">
+          <label for="route">Откуда и куда</label>
+          <input id="route" name="route" type="text" placeholder="Пулково → Невский проспект, 10">
+        </div>
+        <div class="field field-wide">
+          <label for="comment">Когда и что важно</label>
+          <textarea id="comment" name="comment" rows="3"
+                    placeholder="Дата, время, рейс, детское кресло"></textarea>
+        </div>
+        <div class="field field-wide">
+          <button class="btn" type="submit" id="submit">Отправить заявку</button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+            для связи по заявке.</p>
+        </div>
+        <p class="form-status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 Трансфер 78. Демонстрационный сайт: название и телефон вымышлены.</p>
+    <p class="credits">Тема оформления — «Тёмная с жёлтым», собрана с нуля.</p>
+  </div>
+</footer>
+
+<script src="calc.js"></script>
+<script src="form.js"></script>
+</body>
+</html>
