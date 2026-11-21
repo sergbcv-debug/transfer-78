@@ -7,7 +7,6 @@
   var comment = document.getElementById('comment');
   var station = document.getElementById('station');
   var addr = document.getElementById('addr');
-  var routeBtn = document.getElementById('calc-route');
   var hint = document.getElementById('addr-hint');
   if (!cls || !km || !total) return;
 
@@ -56,7 +55,6 @@
     if (q.length < 4) { setHint('Впишите улицу и дом — например, Невский пр., 100.'); return; }
 
     setHint('Считаю расстояние…');
-    if (routeBtn) routeBtn.disabled = true;
 
     var url = 'https://photon.komoot.io/api/?limit=1&q=' +
               encodeURIComponent('Санкт-Петербург, ' + q);
@@ -88,12 +86,22 @@
       .catch(function () {
         setHint('Сервис карт не ответил. Впишите километры вручную — цена посчитается.');
       })
-      .then(function () { if (routeBtn) routeBtn.disabled = false; });
+      ;
   }
 
-  if (routeBtn) routeBtn.addEventListener('click', computeRoute);
-  if (addr) addr.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); computeRoute(); }
+  // адрес считается сам: после паузы в наборе и при уходе из поля
+  var addrTimer = null;
+  function scheduleRoute() {
+    if (addrTimer) clearTimeout(addrTimer);
+    addrTimer = setTimeout(computeRoute, 900);
+  }
+  if (addr) {
+    addr.addEventListener('input', scheduleRoute);
+    addr.addEventListener('blur', function () { if (addrTimer) clearTimeout(addrTimer); computeRoute(); });
+    addr.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); computeRoute(); } });
+  }
+  if (station) station.addEventListener('change', function () {
+    if (addr && addr.value.trim().length >= 4) computeRoute();
   });
 
   [cls, km, document.getElementById('opt-seat'), document.getElementById('opt-sign')]
