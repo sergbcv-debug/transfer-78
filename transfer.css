@@ -107,9 +107,10 @@
   display: grid;
   grid-template-columns: 1.02fr 0.98fr;
   gap: 44px;
-  align-items: center;
-  padding: 64px 0 56px;
+  align-items: start;          /* текст и карточка выравниваются по верху */
+  padding: 56px 0 56px;
 }
+.slide-text { padding-top: 28px; }   /* лёгкий отступ, чтобы не липло к шапке */
 .slide-text h1, .slide-text h2 { margin-bottom: 18px; }
 .slide-text h1 .hl { color: var(--accent); }
 .slide-lede { font-size: 19px; color: var(--muted); max-width: 44ch; }
