@@ -140,3 +140,6 @@
   .slide-inner { grid-template-columns: 1fr; gap: 28px; padding: 36px 0 32px; }
   .stats-row { grid-template-columns: 1fr 1fr; }
 }
+/* кнопка расчёта расстояния */
+.calc-route-row { margin: 2px 0 14px; }
+.calc-route-row .btn { width: 100%; }

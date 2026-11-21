@@ -58,6 +58,27 @@
           </select>
         </div>
         <div class="field">
+          <label for="station">Откуда</label>
+          <select id="station">
+            <option value="">— выберите вокзал или аэропорт —</option>
+            <option value="moscow" data-lat="59.9297" data-lon="30.3622">Московский вокзал</option>
+            <option value="ladoga" data-lat="59.9317" data-lon="30.4413">Ладожский вокзал</option>
+            <option value="vitebsk" data-lat="59.9200" data-lon="30.3286">Витебский вокзал</option>
+            <option value="baltiysky" data-lat="59.9070" data-lon="30.3010">Балтийский вокзал</option>
+            <option value="finland" data-lat="59.9553" data-lon="30.3563">Финляндский вокзал</option>
+            <option value="pulkovo" data-lat="59.8003" data-lon="30.2625">Аэропорт Пулково</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="addr">Адрес назначения</label>
+          <input id="addr" type="text" placeholder="улица и дом, например: Невский пр., 100"
+                 autocomplete="street-address">
+          <p class="hint" id="addr-hint">Расстояние посчитаем по карте — примерно, точно подтвердим по телефону.</p>
+        </div>
+        <p class="calc-route-row">
+          <button class="btn btn-ghost" type="button" id="calc-route">Рассчитать расстояние</button>
+        </p>
+        <div class="field">
           <label for="km">Расстояние, км</label>
           <input id="km" type="number" min="1" max="600" step="1" value="25" inputmode="numeric">
         </div>

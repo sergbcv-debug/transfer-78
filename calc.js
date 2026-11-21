@@ -5,6 +5,10 @@
   var note = document.getElementById('calc-note');
   var form = document.getElementById('booking-form');
   var comment = document.getElementById('comment');
+  var station = document.getElementById('station');
+  var addr = document.getElementById('addr');
+  var routeBtn = document.getElementById('calc-route');
+  var hint = document.getElementById('addr-hint');
   if (!cls || !km || !total) return;
 
   var BASE = 200; // посадка
@@ -30,6 +34,62 @@
       (extra ? ' + доп. услуги' : '') + '. Итог фиксируем при подтверждении.';
     return { sum: sum, text: cls.options[cls.selectedIndex].dataset.name + ', ' + dist + ' км' };
   }
+
+  // --- расстояние по карте: геокодер Photon + формула по прямой с поправкой ---
+  function haversine(lat1, lon1, lat2, lon2) {
+    var R = 6371, dLat = (lat2 - lat1) * Math.PI / 180, dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function setHint(text) { if (hint) hint.textContent = text; }
+
+  function computeRoute() {
+    if (!station || !addr) return;
+    var opt = station.options[station.selectedIndex];
+    var lat = Number(opt.dataset.lat), lon = Number(opt.dataset.lon);
+    var q = addr.value.trim();
+
+    if (!opt.value) { setHint('Сначала выберите, откуда едем.'); return; }
+    if (q.length < 4) { setHint('Впишите улицу и дом — например, Невский пр., 100.'); return; }
+
+    setHint('Считаю расстояние…');
+    if (routeBtn) routeBtn.disabled = true;
+
+    var url = 'https://photon.komoot.io/api/?limit=1&q=' +
+              encodeURIComponent('Санкт-Петербург, ' + q);
+
+    fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var f = data && data.features && data.features[0];
+        if (!f || !f.geometry) {
+          setHint('Не нашёл такой адрес. Уточните улицу и дом или впишите километры вручную.');
+          return;
+        }
+        var lon2 = f.geometry.coordinates[0], lat2 = f.geometry.coordinates[1];
+        var direct = haversine(lat, lon, lat2, lon2);
+        var road = Math.max(2, Math.round(direct * 1.35)); // поправка на дороги
+        km.value = road;
+        calc();
+        var name = (f.properties && (f.properties.street || f.properties.name)) || q;
+        setHint('Маршрут: ' + opt.textContent + ' → ' + name + ', около ' + road + ' км по дорогам.');
+        if (form && comment) {
+          comment.value = 'Откуда: ' + opt.textContent + '; куда: ' + q + '; ~' + road + ' км';
+        }
+      })
+      .catch(function () {
+        setHint('Сервис карт не ответил. Впишите километры вручную — цена посчитается.');
+      })
+      .then(function () { if (routeBtn) routeBtn.disabled = false; });
+  }
+
+  if (routeBtn) routeBtn.addEventListener('click', computeRoute);
+  if (addr) addr.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); computeRoute(); }
+  });
 
   [cls, km, document.getElementById('opt-seat'), document.getElementById('opt-sign')]
     .forEach(function (el) { if (el) el.addEventListener('change', calc); });

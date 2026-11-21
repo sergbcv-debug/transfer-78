@@ -104,3 +104,16 @@
     else { alert(msg); }
   }, true);
 })();
+// --- демо-режим на GitHub Pages: сервера нет, заявка не отправляется ---
+(function () {
+  var f = document.getElementById('order-form') || document.querySelector('form');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var s = document.getElementById('status');
+    var msg = 'Это демонстрационная версия: заявка не отправляется. ' +
+              'В рабочей версии она приходит на почту и в Telegram.';
+    if (s) { s.textContent = msg; s.className = 'form-status ok'; }
+    else { alert(msg); }
+  }, true);
+})();
