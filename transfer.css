@@ -275,3 +275,19 @@
   .tariffs-grid { grid-template-columns: 1fr; gap: 18px; }
   .tariffs-photo img { height: 300px; }
 }
+
+/* машина в первом экране */
+.hero-car {
+  margin: 26px 0 0; max-width: 420px; position: relative;
+}
+.hero-car img {
+  width: 100%; height: 380px; object-fit: cover; object-position: center 42%;
+  border-radius: 16px; display: block;
+  border: 1px solid rgba(255, 255, 255, .08);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 100%);
+}
+@media (max-width: 900px) {
+  .hero-car { max-width: 100%; margin-top: 18px; }
+  .hero-car img { height: 260px; }
+}
