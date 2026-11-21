@@ -278,7 +278,8 @@
 
 /* машина в первом экране */
 .hero-car {
-  margin: 26px 0 0; max-width: 420px; position: relative;
+  margin: 26px 0 0 auto;        /* сдвигаем вправо, ближе к центру страницы */
+  max-width: 440px; position: relative;
 }
 .hero-car img {
   width: 100%; height: 380px; object-fit: cover; object-position: center 42%;
