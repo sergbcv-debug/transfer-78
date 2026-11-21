@@ -143,3 +143,17 @@
 /* кнопка расчёта расстояния */
 .calc-route-row { margin: 2px 0 14px; }
 .calc-route-row .btn { width: 100%; }
+/* Яндекс.Карта: точки подачи */
+.map-frame {
+  border-radius: 18px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: #111;
+  line-height: 0;
+}
+.map-frame iframe { display: block; width: 100%; border: 0; }
+.map-credit { margin: 10px 0 0; font-size: 13px; opacity: .7; }
+
+@media (max-width: 700px) {
+  .map-frame { border-radius: 12px; }
+  .map-frame iframe { height: 320px; }
+}
