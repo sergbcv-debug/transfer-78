@@ -157,3 +157,14 @@
   .map-frame { border-radius: 12px; }
   .map-frame iframe { height: 320px; }
 }
+
+/* интерактивная карта выбора точки */
+.map-box {
+  height: 440px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  z-index: 1;
+}
+.map-box .leaflet-container { background: #111; font: inherit; }
+@media (max-width: 700px) { .map-box { height: 340px; border-radius: 12px; } }
