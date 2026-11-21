@@ -220,3 +220,18 @@
 }
 /* цена без подписи «предварительно» — прижимаем вправо */
 .calc-total { justify-content: flex-end; }
+/* окно «Заказать звонок» */
+.call-inner { width: min(420px, 100%); }
+.call-form { display: grid; gap: 10px; padding: 18px; }
+.call-form label { color: #e6e6ea; font-weight: 600; }
+.call-form input {
+  height: 52px; padding: 0 14px; border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: #0f0f11; color: #fff; font-size: 17px;
+}
+.call-form input:focus { outline: 3px solid rgba(255, 212, 0, .45); outline-offset: 1px; }
+.call-form .btn { height: 52px; }
+.call-note { margin: 2px 0 0; color: #9a9aa2; font-size: 13px; }
+.call-status { margin: 0; min-height: 20px; font-size: 14px; }
+.call-status.ok { color: #ffd400; }
+.call-status.err { color: #ff8a8a; }

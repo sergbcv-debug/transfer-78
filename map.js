@@ -115,6 +115,8 @@
   }
 
   if (openLink) openLink.addEventListener('click', open);
+  var heroBtn = document.getElementById('hero-map');
+  if (heroBtn) heroBtn.addEventListener('click', open);
   if (closeBtn) closeBtn.addEventListener('click', close);
   modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });

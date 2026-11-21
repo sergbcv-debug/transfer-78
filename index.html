@@ -42,7 +42,7 @@
         <p class="slide-lede">Пулково, Московский и Ладожский вокзалы, Петергоф, Кронштадт,
           Выборг. Цену называем до поездки — в пути она не меняется.</p>
         <div class="hero-actions">
-          <a class="btn" href="#calc">Рассчитать поездку</a>
+          <a class="btn" href="#call-modal" id="hero-call">Заказать звонок</a>
           <a class="btn btn-ghost" href="tel:+78120000000">Позвонить</a>
         </div>
       </div>
@@ -281,6 +281,23 @@
 
 <script src="calc.js?v=4"></script>
 <script src="form.js?v=3"></script>
+<div id="call-modal" class="map-modal" hidden>
+  <div class="map-modal-inner call-inner" role="dialog" aria-modal="true" aria-label="Заказать звонок">
+    <div class="map-modal-head">
+      <strong>Заказать звонок</strong>
+      <button type="button" class="map-modal-close" id="close-call" aria-label="Закрыть окно">×</button>
+    </div>
+    <form class="call-form" id="call-form" novalidate>
+      <label for="call-phone">Телефон</label>
+      <input id="call-phone" name="phone" type="tel" inputmode="tel"
+             placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      <button class="btn" type="submit">Жду звонка</button>
+      <p class="call-note">Перезвоним в течение 15 минут в рабочее время.</p>
+      <p class="call-status" id="call-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
 <div id="map-modal" class="map-modal" hidden>
   <div class="map-modal-inner" role="dialog" aria-modal="true" aria-label="Выбор точки на карте">
     <div class="map-modal-head">
@@ -293,6 +310,7 @@
 </div>
 
   <script src="assets/leaflet/leaflet.js"></script>
-  <script src="map.js?v=2"></script>
+  <script src="call.js?v=1"></script>
+  <script src="map.js?v=3"></script>
 </body>
 </html>
