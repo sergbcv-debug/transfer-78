@@ -101,10 +101,9 @@
 
   function open(e) {
     if (e) e.preventDefault();
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
     var inner = modal.querySelector('.map-modal-inner');
-    if (inner) inner.focus();
+    if (window.modalFocus) window.modalFocus.open(modal, inner);
+    else { modal.hidden = false; if (inner) inner.focus(); }
     initMap();
     setTimeout(function () { if (map) map.invalidateSize(); }, 60);
     setHint(stationOf() ? ('Откуда: ' + stationOf().name + '. Ткните точку назначения.')
@@ -112,8 +111,8 @@
   }
 
   function close() {
-    modal.hidden = true;
-    document.body.style.overflow = '';
+    if (window.modalFocus) window.modalFocus.close(modal);
+    else modal.hidden = true;
   }
 
   if (openLink) openLink.addEventListener('click', open);

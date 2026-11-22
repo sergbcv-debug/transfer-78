@@ -10,14 +10,13 @@
 
   function open(e) {
     if (e) e.preventDefault();
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    setTimeout(function () { input.focus(); }, 60);
+    if (window.modalFocus) window.modalFocus.open(modal, input);
+    else { modal.hidden = false; input.focus(); }
   }
 
   function close() {
-    modal.hidden = true;
-    document.body.style.overflow = '';
+    if (window.modalFocus) window.modalFocus.close(modal);
+    else modal.hidden = true;
   }
 
   function say(text, ok) {
