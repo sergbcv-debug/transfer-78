@@ -56,7 +56,8 @@
 .hero-strip-form { display: flex; align-items: center; gap: 10px; flex: 1 1 380px; }
 .hero-strip-label {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
-  clip: rect(0 0 0 0); white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%); white-space: nowrap;
 }
 .hero-strip-form input {
   flex: 1 1 auto; min-width: 180px; height: 48px; border-radius: 10px;
