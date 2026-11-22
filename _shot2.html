@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>shot</title>
+<style>body{margin:0;background:#000}iframe{border:0;display:block}</style>
+</head>
+<body>
+<iframe id="d" src="index.html" width="1440" height="900"></iframe>
+<script>
+  document.getElementById('d').onload = function () {
+    var d = this.contentDocument, w = this.contentWindow;
+    var st = d.getElementById('station');
+    for (var i = 0; i < st.options.length; i++) if (st.options[i].value === 'pulkovo') st.selectedIndex = i;
+    st.dispatchEvent(new w.Event('change'));
+    var addr = d.getElementById('addr');
+    addr.value = 'Московское шоссе, 14';
+    addr.dispatchEvent(new w.Event('input'));
+  };
+</script>
+</body>
+</html>
