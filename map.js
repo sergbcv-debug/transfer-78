@@ -103,6 +103,8 @@
     if (e) e.preventDefault();
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
+    var inner = modal.querySelector('.map-modal-inner');
+    if (inner) inner.focus();
     initMap();
     setTimeout(function () { if (map) map.invalidateSize(); }, 60);
     setHint(stationOf() ? ('Откуда: ' + stationOf().name + '. Ткните точку назначения.')

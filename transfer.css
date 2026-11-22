@@ -292,3 +292,7 @@
   .hero-car { max-width: 100%; margin-top: 18px; }
   .hero-car img { height: 260px; }
 }
+
+/* подпись «Итого» рядом с ценой и ссылка «открыть карту» вне label */
+.calc-total-label { font-weight: 600; color: #cfd0d6; }
+.field > .map-link { display: inline-block; margin: 0 0 6px 6px; font-size: 13px; }

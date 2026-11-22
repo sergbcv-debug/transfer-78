@@ -44,6 +44,7 @@
         <div class="hero-actions">
           <a class="btn" href="#call-modal" id="hero-call">Заказать звонок</a>
           <a class="btn btn-ghost" href="tel:+78120000000">Позвонить</a>
+        </div>
 
         <ul class="hero-points">
           <li>Фиксированная цена — без доплат в пути</li>
@@ -52,10 +53,9 @@
         </ul>
 
         <figure class="hero-car">
-          <img src="assets/cars/car-1-hero.jpg" width="900" height="672" loading="lazy"
+          <img src="assets/cars/car-1-hero.jpg" width="900" height="672"
                alt="Автомобиль комфорт-класса в тёмной студии">
         </figure>
-        </div>
       </div>
 
       <div class="calc-card" id="calc">
@@ -82,9 +82,10 @@
           </select>
         </div>
         <div class="field">
-          <label for="addr">Адрес назначения <a href="#map-modal" class="map-link" id="open-map">(открыть карту)</a></label>
+          <label for="addr">Адрес назначения</label>
+          <a href="#map-modal" class="map-link" id="open-map">(открыть карту)</a>
           <input id="addr" type="text" placeholder="улица и дом, например: Невский пр., 100"
-                 autocomplete="address-line1">
+                 autocomplete="address-line1" aria-describedby="addr-hint">
           <p class="hint" id="addr-hint">Расстояние посчитаем по карте — примерно, точно подтвердим по телефону.</p>
         </div>
 <div class="field">
@@ -96,7 +97,8 @@
           <label><input type="checkbox" id="opt-seat" value="300"> Детское кресло</label>
           <label><input type="checkbox" id="opt-sign" value="500"> Встреча с табличкой</label>
         </fieldset>
-        <p class="calc-total">
+        <p class="calc-total" role="status" aria-live="polite">
+          <span class="calc-total-label">Итого</span>
           <strong id="total">1 075 ₽</strong>
         </p>
         <p class="calc-note" id="calc-note">Посадка 200 ₽ + 25 км × 35 ₽</p>
@@ -293,7 +295,7 @@
 <script src="calc.js?v=4"></script>
 <script src="form.js?v=3"></script>
 <div id="call-modal" class="map-modal" hidden>
-  <div class="map-modal-inner call-inner" role="dialog" aria-modal="true" aria-label="Заказать звонок">
+  <div class="map-modal-inner call-inner" role="dialog" aria-modal="true" tabindex="-1" aria-label="Заказать звонок">
     <div class="map-modal-head">
       <strong>Заказать звонок</strong>
       <button type="button" class="map-modal-close" id="close-call" aria-label="Закрыть окно">×</button>
@@ -310,7 +312,7 @@
 </div>
 
 <div id="map-modal" class="map-modal" hidden>
-  <div class="map-modal-inner" role="dialog" aria-modal="true" aria-label="Выбор точки на карте">
+  <div class="map-modal-inner" role="dialog" aria-modal="true" tabindex="-1" aria-label="Выбор точки на карте">
     <div class="map-modal-head">
       <strong>Ткните точку назначения</strong>
       <button type="button" class="map-modal-close" id="close-map" aria-label="Закрыть карту">×</button>
@@ -322,6 +324,6 @@
 
   <script src="assets/leaflet/leaflet.js"></script>
   <script src="call.js?v=1"></script>
-  <script src="map.js?v=3"></script>
+  <script src="map.js?v=4"></script>
 </body>
 </html>
